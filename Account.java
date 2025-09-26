@@ -6,14 +6,14 @@ public class Account {
     private double accountBalance;
 
     //default constructor
-    void Account(){
+    Account(){
         accountNumber = nextNumber;
         nextNumber++;
         accountBalance = 0.0;
     }
 
     //constructor for an account with  bal
-    void Account(double i){
+    Account(double i){
         accountNumber = nextNumber;
         nextNumber++;
         accountBalance = i;
