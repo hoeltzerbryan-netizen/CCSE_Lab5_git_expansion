@@ -15,7 +15,6 @@ public class Checking extends Account {
         }else{
             return withdraw(bal);
         }
-
     }
     //another toString
     @Override
