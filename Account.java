@@ -12,7 +12,7 @@ public class Account {
         accountBalance = 0.0;
     }
 
-    //constructor for an account with  bal
+    //constructor for an account with bal
     Account(double i){
         accountNumber = nextNumber;
         nextNumber++;

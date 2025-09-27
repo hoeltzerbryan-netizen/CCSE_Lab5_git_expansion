@@ -7,7 +7,7 @@ class Lab5{
         Savings S = new Savings(500);
         System.out.print("[Banking System]");
         do{
-            System.out.print("1. Withdraw from Checking\n" +
+            System.out.print("\n1. Withdraw from Checking\n" +
                     "2. Withdraw from Savings\n" +
                     "3. Deposit to Checking\n" +
                     "4. Deposit to Savings\n" +
@@ -20,49 +20,45 @@ class Lab5{
             double numb;
             switch(option){
                 case 1:
-                    System.out.println("How much would you like to withdraw from Checking? $");
+                    System.out.print("\nHow much would you like to withdraw from Checking? $");
                     numb = sc.nextDouble();
                     C.withdraw(numb);
-                    if(C.getAccountBalance()<0){
-                        System.out.print("Charging an overdraft fee of $20 because account is below $0");
-                    }
-                    System.out.print("Current balance of Checking is $"+C.getAccountBalance());
+                    System.out.println("Current balance of Checking is $"+C.getAccountBalance());
                     break;
                 case 2:
-                    System.out.print("How much would you like to withdraw from Savings? $");
+                    System.out.print("\nHow much would you like to withdraw from Savings? $");
                     numb = sc.nextDouble();
                     S.withdraw(numb);
-                    if(S.getAccountBalance()<0){
-                        System.out.print("Charging an overdraft fee of $10 because you are below $500");
-                    }
-                    System.out.print("Current balance of Checking is $"+S.getAccountBalance());
+                    System.out.println("Current balance of Savings is $"+S.getAccountBalance());
                     break;
                 case 3:
-                    System.out.print("How much would you like to deposit to Checking");
+                    System.out.print("\nHow much would you like to deposit to Checking? $");
                     numb = sc.nextDouble();
                     C.deposit(numb);
-                    System.out.print("Current balance of Checking is $"+C.getAccountBalance());
+                    System.out.println("Current balance of Checking is $"+C.getAccountBalance());
                     break;
                 case 4:
-                    System.out.print("How much would you like to deposit to Savings");
+                    System.out.print("\nHow much would you like to deposit to Savings? $");
                     numb = sc.nextDouble();
                     S.deposit(numb);
-                    System.out.print("Current balance of Savings is $"+S.getAccountBalance());
+                    System.out.println("Current balance of Savings is $"+S.getAccountBalance());
                     break;
                 case 5:
-                    System.out.print("Checking Account #"+C.getAccountNumber()+", balance: $"+C.getAccountBalance());
+                    System.out.println("\nChecking Account #"+C.getAccountNumber()+", balance: $"+C.getAccountBalance());
                     break;
                 case 6:
-                    System.out.print("Savings Account #"+S.getAccountNumber()+", balance: $"+S.getAccountBalance());
+                    System.out.println("\nSavings Account #"+S.getAccountNumber()+", balance: $"+S.getAccountBalance());
                     break;
                 case 7:
-                    System.out.print("Customer earned $"+S.addInterest()+" in interest");
-                    System.out.print("Current balance of Savings is $"+S.getAccountBalance());
+                    S.addInterest();
+                    System.out.println("Current balance of Savings is $"+S.getAccountBalance());
+                    break;
+                case 8:
+                    System.out.println("\nShutting Off...");
                     break;
                 default:
-                    System.out.print("Invalid option.");
+                    System.out.println("Invalid option.");
             }
         }while(option !=8);
-        System.out.print("hi");
     }
 }

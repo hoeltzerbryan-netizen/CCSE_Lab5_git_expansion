@@ -10,7 +10,7 @@ public class Savings extends Account {
         double bal = super.withdraw(i);
         if(bal<500){
             System.out.println("Charging a fee of $10 because you are below $500");
-            return super.withdraw(500);
+            return super.withdraw(10);
         }else{
             return getAccountBalance();
         }
@@ -19,7 +19,7 @@ public class Savings extends Account {
     @Override
     double deposit(double i){
         numberOFDeposits++;
-        System.out.print("This is deposit " + numberOFDeposits + " to this account");
+        System.out.println("This is deposit " + numberOFDeposits + " to this account");
         double bal = super.deposit(i);
         if(numberOFDeposits>5){
             System.out.println("Charging a fee of $10");
@@ -30,7 +30,7 @@ public class Savings extends Account {
     //inform of interest
     double addInterest(){
         double x = .015 * getAccountBalance();
-        System.out.println("Customer has earned $"+ x +" in interest");
+        System.out.println("\nCustomer has earned $"+ x +" in interest");
         super.deposit(x);
         return getAccountBalance();
     }
