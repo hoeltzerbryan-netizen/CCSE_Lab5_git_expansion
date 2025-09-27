@@ -13,7 +13,7 @@ public class Checking extends Account {
                     "account is below $0 ");
             return super.withdraw(20);
         }else{
-            return withdraw(bal);
+            return getAccountBalance();
         }
     }
     //another toString
