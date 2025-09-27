@@ -17,9 +17,8 @@ class Lab5{
                     "8. Quit\n" +
                     "Select option: ");
             option = sc.nextInt();
-
+            double numb;
             switch(option){
-                double numb;
                 case 1:
                     System.out.println("How much would you like to withdraw from Checking? $");
                     numb = sc.nextDouble();
@@ -40,14 +39,25 @@ class Lab5{
                     break;
                 case 3:
                     System.out.print("How much would you like to deposit to Checking");
+                    numb = sc.nextDouble();
+                    C.deposit(numb);
+                    System.out.print("Current balance of Checking is $"+C.getAccountBalance());
                     break;
                 case 4:
+                    System.out.print("How much would you like to deposit to Savings");
+                    numb = sc.nextDouble();
+                    S.deposit(numb);
+                    System.out.print("Current balance of Savings is $"+S.getAccountBalance());
                     break;
                 case 5:
+                    System.out.print("Checking Account #"+C.getAccountNumber()+", balance: $"+C.getAccountBalance());
                     break;
                 case 6:
+                    System.out.print("Savings Account #"+S.getAccountNumber()+", balance: $"+S.getAccountBalance());
                     break;
                 case 7:
+                    System.out.print("Customer earned $"+S.addInterest()+" in interest");
+                    System.out.print("Current balance of Savings is $"+S.getAccountBalance());
                     break;
                 default:
                     System.out.print("Invalid option.");
