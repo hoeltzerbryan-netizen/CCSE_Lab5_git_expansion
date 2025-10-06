@@ -2,13 +2,11 @@ public class Password extends Account {
     private String accountUser;
     private String password;
 
-    Password(double i) {
-        super(i);
+    Password() {
         accountUser = "";
         password = "";
     }
-    Password(String u, String p,double i) {
-        super(i);
+    Password(String u, String p) {
         accountUser = u;
         password = p;
     }

@@ -5,9 +5,21 @@ class Lab5{
         int option;
         Checking C = new Checking(0);
         Savings S = new Savings(500);
-        System.out.print("[Banking System]");
+        System.out.println("[Banking System]");
+        System.out.print("Create a user name: ");
+        String User = sc.nextLine();
+        System.out.print("Create a password: ");
+        String pass = sc.nextLine();
+        Password P = new Password(User,pass);
         do{
-            System.out.print("\n1. Withdraw from Checking\n" +
+            sc.nextLine();
+            System.out.print("Before you start enter your password to reconfirm. ");
+            String Pass = sc.nextLine();
+            if(P.isPass(Pass)!=true) {
+                System.out.print("Incorrect");
+                break;
+            }
+            System.out.print("\nUser: "+P.getAccountUser()+"\n1. Withdraw from Checking\n" +
                     "2. Withdraw from Savings\n" +
                     "3. Deposit to Checking\n" +
                     "4. Deposit to Savings\n" +
