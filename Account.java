@@ -10,6 +10,7 @@ public class Account {
         accountNumber = nextNumber;
         nextNumber++;
         accountBalance = 0.0;
+
     }
 
     //constructor for an account with bal
